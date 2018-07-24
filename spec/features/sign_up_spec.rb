@@ -18,6 +18,9 @@ RSpec.feature "Sign up", :type => :feature do
     expect(Member.last.first_name).to eq('James')
     expect(Member.last.last_name).to eq('Darling')
     expect(Member.last.email).to eq('james@test.com')
+
+    open_email('james@test.com')
+    expect(current_email).to have_content 'ABCD'
   end
 
   scenario "User signs up unsuccessfully" do

@@ -6,6 +6,7 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(member_params)
     if @member.save
+      MemberMailer.with(member: @member).welcome_email.deliver_now
       render template: 'members/success'
     else
       render action: :new
