@@ -13,6 +13,16 @@ class MembersController < ApplicationController
     end
   end
 
+  def find
+
+  end
+
+  def find_confirm
+    if @member = Member.where(email: params[:email]).first
+      MemberMailer.with(member: @member).reminder.deliver_now
+    end
+  end
+
   private
 
   def member_params

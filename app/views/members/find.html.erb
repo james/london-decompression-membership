@@ -1,0 +1,7 @@
+<p>To check if you are a member of London Decompression Ltd and to find your
+membership number we need the email address that you used to register.</p>
+
+<%= bootstrap_form_tag url: find_confirm_members_path do |form| %>
+  <%= form.text_field :email %>
+  <%= form.submit "Find" %>
+<% end %>
