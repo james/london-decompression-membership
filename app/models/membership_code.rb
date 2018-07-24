@@ -1,0 +1,2 @@
+class MembershipCode < ApplicationRecord
+end

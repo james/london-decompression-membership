@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.feature "Sign up", :type => :feature do
+  before do
+    MembershipCode.create!(code: 'ABCD')
+  end
+
   scenario "User signs up successfully" do
     visit "/"
     click_link "Click here to join"
