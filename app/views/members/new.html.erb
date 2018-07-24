@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @member do |form| %>
+  <%= form.text_field :first_name %>
+  <%= form.text_field :last_name %>
+  <%= form.email_field :email %>
+  <%= form.submit 'Create Membership' %>
+<% end %>
