@@ -11,6 +11,7 @@ class Member < ApplicationRecord
   def set_membership_number
     if membership_code = MembershipCode.where(taken: false).first
       self.membership_number = membership_code.code
+      membership_code.taken!
     end
   end
 end
