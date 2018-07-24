@@ -11,9 +11,10 @@ RSpec.feature "Sign up", :type => :feature do
     fill_in "First name", :with => "James"
     fill_in "Last name", :with => "Darling"
     fill_in "Email", :with => "james@test.com"
+    check "I agree and wish to apply for membership."
     click_button "Create Membership"
 
-    expect(page).to have_text("Success.")
+    expect(page).to have_text("Success")
     expect(Member.last.first_name).to eq('James')
     expect(Member.last.last_name).to eq('Darling')
     expect(Member.last.email).to eq('james@test.com')

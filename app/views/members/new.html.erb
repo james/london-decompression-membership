@@ -1,6 +1,18 @@
 <%= bootstrap_form_for @member do |form| %>
-  <%= form.text_field :first_name %>
-  <%= form.text_field :last_name %>
-  <%= form.email_field :email %>
-  <%= form.submit 'Create Membership' %>
+  <fieldset>
+    <%= form.text_field :first_name %>
+    <%= form.text_field :last_name %>
+    <%= form.email_field :email %>
+  </fieldset>
+  <fieldset>
+    <p>To become a member of London Decompression Ltd you must agree to the following:</p>
+
+    <p>I am prepared to take into consideration the principles of Burning Man and I agree to
+    participate in the wider Burning Man community.</p>
+
+    <%= form.check_box :burning_man_principles, label: "I agree and wish to apply for membership." %>
+  </fieldset>
+  <fieldset>
+    <%= form.submit 'Create Membership' %>
+  </fieldset>
 <% end %>
