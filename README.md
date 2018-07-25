@@ -1,24 +1,15 @@
-# README
+# London Decompression Membership
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A very simple app to handle London Decompression memberships.
 
-Things you may want to cover:
+To run locally:
 
-* Ruby version
+`bundle`
+`rake db:setup`
+`rails s`
 
-* System dependencies
+and visit http://localhost:3000
 
-* Configuration
+To run the test suite:
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`rake`
