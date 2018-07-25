@@ -29,10 +29,10 @@ free - of course!</p>
 <p><%= link_to "Click here to join", new_member_path %></p>
 
 <h4>4. How do I check to see if I am a member of London Decompression?</h4>
-<p><%= link_to "Click here to check" %>.</p>
+<p><%= link_to "Click here to check", find_members_path %>.</p>
 
 <h4>5. How do I retrieve my existing membership number?</h4>
-<p><%= link_to "Click here to check" %>.</p>
+<p><%= link_to "Click here to check", find_members_path %>.</p>
 
 <h4>6. Do I need to renew membership?</h4>
 <p>All memberships lapse at the end of March each year. We will email you to remind you to take out a
@@ -42,18 +42,18 @@ new membership for the next year, which will be available from the start of Apri
 <p>Remember that your membership will automatically lapse in March each so there is no need to do
 anything generally. However if you wish to cancel your membership before the end of March, we need
 your membership number. If you don’t have this please retrieve it by using the answer to question 5
-above. Then email members@londondecom.org with that information and ask for your membership to
-be cancelled.</p>
+above. Then email <%= link_to "members@londondecom.org", "mailto:members@londondecom.org" %> with that
+information and ask for your membership to be cancelled.</p>
 
 <h4>8. Want to know all about London Decompression events and ticket sales?</h4>
-<p>Go tolondondecompression.org</p>
+<p>Go to <%= link_to "londondecompression.org", "http://londondecompression.org" %></p>
 
 <h4>9. Want the FAQs for London Decompression&#39;s members or those interested or wishing to join?</h4>
-<p>Go here [London Decom FAQ v3.pdf]</p>
+<p><%= link_to "Go here", "/LondonDecomFAQ.pdf" %></p>
 
 <h4>10. Not covered by any of the above?</h4>
 <p>You can contact the membership team at LondonDecompression by emailing
 members@londondecom.org for any membership queries not covered above. Please note replies may
 take several days as this is a volunteer organisation. Queries about events, sales of tickets,
-administration or volunteering should be addressed to info@londondecom.org. More information for
-all the above can be found at londondecompression.org</p>
+administration or volunteering should be addressed to <%= link_to "info@londondecom.org", "mailto:info@londondecom.org" %>. More information for
+all the above can be found at <%= link_to "londondecompression.org", "http://londondecompression.org" %></p>
