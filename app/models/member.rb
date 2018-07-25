@@ -3,8 +3,13 @@ class Member < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true, email: true
   validates :burning_man_principles, acceptance: true, on: :create
+  validates :membership_status, presence: true, inclusion: { in: %w(associate full) }
 
   before_create :set_membership_number
+
+  def membership_status_enum
+    %w(associate full)
+  end
 
   private
 
