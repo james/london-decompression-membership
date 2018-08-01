@@ -15,7 +15,7 @@ RSpec.feature "Finding a membership", :type => :feature do
     expect(page).to have_text("If you are a member with this address you will receive")
 
     open_email('james@test.com')
-    expect(current_email).to have_content 'Someone requested'
+    expect(current_email).to have_content 'Someone just requested'
     expect(current_email).to have_content 'ABCD'
   end
 
