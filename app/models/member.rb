@@ -6,6 +6,7 @@ class Member < ApplicationRecord
   validates :membership_status, presence: true, inclusion: { in: %w(associate full) }
 
   before_create :set_membership_number
+  before_destroy :release_membership_number
 
   def membership_status_enum
     %w(associate full)
@@ -17,6 +18,12 @@ class Member < ApplicationRecord
     if membership_code = MembershipCode.where(taken: false).first
       self.membership_number = membership_code.code
       membership_code.taken!
+    end
+  end
+
+  def release_membership_number
+    if membership_code = MembershipCode.where(code: self.membership_number).first
+      membership_code.available!
     end
   end
 end
