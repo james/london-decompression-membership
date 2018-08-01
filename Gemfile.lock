@@ -61,6 +61,7 @@ GEM
       rails (>= 5.0)
     builder (3.2.3)
     byebug (10.0.2)
+    cancancan (2.2.0)
     capybara (3.4.2)
       addressable
       mini_mime (>= 0.1.3)
@@ -287,6 +288,7 @@ DEPENDENCIES
   bootstrap
   bootstrap_form (>= 4.0.0.alpha1)
   byebug
+  cancancan
   capybara (>= 2.15, < 4.0)
   capybara-email
   chromedriver-helper

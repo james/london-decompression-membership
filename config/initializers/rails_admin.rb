@@ -11,14 +11,8 @@ RailsAdmin.config do |config|
 
   config.excluded_models = ['ActiveStorage::Blob', 'ActiveStorage::Attachment']
 
-  ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
-
   ## == Cancan ==
-  # config.authorize_with :cancan
+  config.authorize_with :cancan
 
   ## == Pundit ==
   # config.authorize_with :pundit
