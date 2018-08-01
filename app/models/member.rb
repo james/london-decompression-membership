@@ -8,6 +8,8 @@ class Member < ApplicationRecord
   before_create :set_membership_number
   before_destroy :release_membership_number
 
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable
+
   def membership_status_enum
     %w(associate full)
   end

@@ -39,6 +39,7 @@ gem "bootstrap_form", ">= 4.0.0.alpha1"
 gem 'email_validator'
 
 gem 'rails_admin'
+gem 'devise'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

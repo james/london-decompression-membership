@@ -3,9 +3,10 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   config.authenticate_with do
-    authenticate_or_request_with_http_basic('Login required') do |username, password|
-      username == 'admin' && password == ENV['ADMIN_PASSWORD']
+    config.authenticate_with do
+      warden.authenticate! scope: :member
     end
+    config.current_user_method(&:current_member)
   end
 
   config.excluded_models = ['ActiveStorage::Blob', 'ActiveStorage::Attachment']
