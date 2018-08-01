@@ -5,9 +5,14 @@
   </head>
   <body>
     <p>Hi <%= @member.first_name %></p>
+    <p>Someone just requested that your membership number be emailed to you.</p>
     <p>
-      Someone requested your membership number be sent to you,
-      your membership number is: <strong><%= @member.membership_number %></strong>.<br>
+      Your membership number is: <strong><%= @member.membership_number %></strong>.<br>
+    </p>
+
+    <p>
+      For further information, and to buy tickets, go to
+      <a href="http://londondecom.org">londondecom.org</a>.
     </p>
   </body>
 </html>
