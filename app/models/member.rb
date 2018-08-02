@@ -4,6 +4,7 @@ class Member < ApplicationRecord
   validates :email, presence: true, uniqueness: true, email: true
   validates :burning_man_principles, acceptance: true, on: :create
   validates :membership_status, presence: true, inclusion: { in: %w(associate volunteer full) }
+  validates :access, presence: true, inclusion: { in: %w(none read admin) }
 
   before_create :set_membership_number
   before_destroy :release_membership_number
@@ -14,17 +15,21 @@ class Member < ApplicationRecord
     %w(associate volunteer full)
   end
 
+  def access_enum
+    %w(none read admin)
+  end
+
   def has_account?
     encrypted_password.present?
   end
 
   def read_admin?
-    membership_status == 'volunteer' ||
-    membership_status == 'full'
+    access == 'read' ||
+    access == 'admin'
   end
 
   def write_admin?
-    membership_status == 'full'
+    access == 'admin'
   end
 
   private

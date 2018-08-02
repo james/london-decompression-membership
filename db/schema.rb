@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_01_195255) do
+ActiveRecord::Schema.define(version: 2018_08_02_155446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_08_01_195255) do
     t.inet "last_sign_in_ip"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
+    t.string "access", default: "none", null: false
   end
 
   create_table "membership_codes", force: :cascade do |t|
