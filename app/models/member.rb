@@ -3,7 +3,7 @@ class Member < ApplicationRecord
   validates :last_name, presence: true
   validates :email, presence: true, uniqueness: true, email: true
   validates :burning_man_principles, acceptance: true, on: :create
-  validates :membership_status, presence: true, inclusion: { in: %w(associate volunteer full) }
+  validates :membership_status, presence: true, inclusion: { in: %w(associate full) }
   validates :access, presence: true, inclusion: { in: %w(none read admin) }
 
   before_create :set_membership_number
@@ -12,7 +12,7 @@ class Member < ApplicationRecord
   devise :database_authenticatable, :recoverable, :rememberable, :trackable
 
   def membership_status_enum
-    %w(associate volunteer full)
+    %w(associate full)
   end
 
   def access_enum
