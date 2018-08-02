@@ -41,4 +41,28 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'Member' do
+    list do
+      field :id
+      field :first_name
+      field :last_name
+      field :email
+      field :membership_status
+      field :membership_number
+      field :access
+      field :created_at
+    end
+
+    edit do
+      field :first_name
+      field :last_name
+      field :email
+      field :membership_status
+      field :membership_number
+      field :access
+      field :password
+    end
+  end
+
 end
