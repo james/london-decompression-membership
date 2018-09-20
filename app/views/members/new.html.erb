@@ -1,4 +1,5 @@
 <%= bootstrap_form_for @member do |form| %>
+  <h2>Register as a London Decompression member</h2>
   <fieldset>
     <%= form.text_field :first_name %>
     <%= form.text_field :last_name %>
@@ -12,7 +13,9 @@
 
     <%= form.check_box :burning_man_principles, label: "I agree and wish to apply for membership." %>
   </fieldset>
+  <br>
   <fieldset>
-    <%= form.submit 'Create Membership' %>
+    <%= form.submit 'Create Membership' %><br>
+    <p><%= link_to "Back to membership home", root_path %></p>
   </fieldset>
 <% end %>

@@ -1,2 +1,17 @@
 @import "color_scheme";
 @import "bootstrap";
+
+body { background-image: url("https://londondecom.org/wp-content/uploads/2017/09/bg2.jpg"); background-position: center top; background-size: cover; background-repeat: no-repeat; background-attachment: fixed; }
+.container {
+  background: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.page-header {
+  text-align: center;
+  img {
+    width: 100%;
+  }
+}
