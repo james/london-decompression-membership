@@ -8,6 +8,7 @@ class Member < ApplicationRecord
 
   before_create :set_membership_number
   before_destroy :release_membership_number
+  before_create :downcase_email
 
   devise :database_authenticatable, :recoverable, :rememberable, :trackable
 
@@ -45,5 +46,9 @@ class Member < ApplicationRecord
     if membership_code = MembershipCode.where(code: self.membership_number).first
       membership_code.available!
     end
+  end
+
+  def downcase_email
+    self.email = self.email.downcase
   end
 end

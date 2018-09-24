@@ -18,7 +18,7 @@ class MembersController < ApplicationController
   end
 
   def find_confirm
-    if @member = Member.where(email: params[:email]).first
+    if @member = Member.where(email: params[:email].downcase).first
       MemberMailer.with(member: @member).reminder.deliver_now
     end
   end
